@@ -1,0 +1,60 @@
+<h2 class="edit-title">Edit Form</h2>
+<div class="edit-container">
+    <div class="edit-form">
+        <form [formGroup]="studentForm" (ngSubmit)="submitForm()">
+            <label>Student Name:</label>
+            <br>
+            <input type="text" formControlName="name" placeholder="Enter Student Name" required>
+            <br>
+
+            <label>Roll Number:</label>
+            <br>
+            <input type="text" formControlName="rollNumber" placeholder="Enter Roll Number" required>
+            <br>
+
+            <label>Email:</label>
+            <br>
+            <input type="email" formControlName="email" placeholder="Enter Email" required>
+            <br>
+
+            <label>Branch:</label>
+            <br>
+            <input type="text" formControlName="branch" placeholder="Enter Branch" required>
+            <br>
+
+            <label>Course Name:</label>
+            <br>
+            <input type="text" formControlName="programName" placeholder="Enter Course Name" required>
+            <br>
+            <label>Tr Interview</label>
+            <input formControlName="mockinterview">
+            <br>
+            <label>Hr Interview</label>
+            <input formControlName="hrInterview">
+            <br>
+            <label>Linkedin URL:</label>
+            <input type="url" formControlName="linkedin">
+
+            <label>Hackerrank URL:</label>
+            <input type="url" formControlName="hackerrank">
+
+            <label>Codechef URL:</label>
+            <input type="url" formControlName="codechef">
+
+            <label>Leetcode URL:</label>
+            <input type="url" formControlName="leetcodeurl">
+
+            <br>
+            <label>Existing Image:</label>
+            <br>
+            <!-- Show Existing Image -->
+            <img *ngIf="imagePreview" [src]="imagePreview" alt="Student Image" width="150">
+            <br>
+
+            <label>Upload New Image:</label>
+            <input type="file" (change)="uploadImage($event)">
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+</div>

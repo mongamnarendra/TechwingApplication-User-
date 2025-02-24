@@ -1,0 +1,51 @@
+<nav>
+    <div class="logo">
+        <img src="https://techwing.org/assets/navbar/logo%20(3).png" alt="">
+    </div>
+    <div class="heading">
+        <h2>Admin Dashboard</h2>
+    </div>
+    
+</nav>
+
+<section>
+    <div class="actions">
+        <div>
+            <input type="text" (input)="searchStudent($event)" placeholder="Search by Roll Number">
+        </div>
+        <div class="add">
+            <button (click)="addStudent()">Add</button>
+            <button (click)="attendance()">Attendance</button>
+        </div>
+    </div>
+    <div class="hero">
+        <table>
+            <thead>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngIf="filteredData.length==0">
+                    <td colspan="4">No Records Found with pin number</td>
+                </tr>
+                <tr *ngFor="let i of filteredData">
+                    <td>
+                        <div *ngIf="i.image">
+                            <img [src]="'data:image/jpeg;base64,' + i.image" alt="Student Image" width="50" height="50">
+                        </div>
+                    </td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.rollNumber}}</td>
+                    <td>
+                        <button (click)="edit(i.rollNumber)">Edit</button>
+                        <button (click)="deleteStudent(i.id)">Delete</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        
+    </div>
+</section>
