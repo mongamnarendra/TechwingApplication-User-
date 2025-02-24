@@ -1,26 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditstudentComponent } from './editstudent/editstudent.component';
-import { AdminComponent } from './Dashboard/admin/admin.component';
-import { AddstudentComponent } from './addstudent/addstudent.component';
-import { AttendanceComponent } from './attendance/attendance.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
 
 const routes: Routes = [
   {
     path:"",
-    component:AdminComponent
+    component:WelcomePageComponent
   },
   {
-    path:"edit/:id",
-    component:EditstudentComponent
-  },
-  {
-    path:"add",
-    component:AddstudentComponent
-  },
-  {
-    path:"attendance",
-    component:AttendanceComponent
+    path:'studentdetails/:rollnumber',
+    component:StudentdetailsComponent
   }
 ];
 
